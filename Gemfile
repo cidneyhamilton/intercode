@@ -1,7 +1,7 @@
-source 'https://rubygems.org'
+source 'http://rubygems.org'
 
 #ruby '1.9.2'
-gem 'rails', '3.2.12'
+gem 'rails', '4.0.0.beta1'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -22,8 +22,8 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', github: 'rails/sass-rails'
+  gem 'coffee-rails', github: 'rails/coffee-rails'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer'
@@ -37,11 +37,11 @@ end
 gem 'jquery-rails'
 
 # Devise for authentication, cancan for authorization
-gem 'devise'
+gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
 gem 'cancan'
 
 # Lightweight open-source CMS (written by Nat for Gively Inc.)
-gem 'cadmus'
+gem 'cadmus', path: '/Users/nbudin/code/cadmus'
 
 # File uploading
 gem 'carrierwave'
