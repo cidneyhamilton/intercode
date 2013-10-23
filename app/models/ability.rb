@@ -16,8 +16,15 @@ class Ability
       # Site admins can do any action whatsoever.
       can :manage, :all
     else
-      can :manage, Con, :user_con_profiles => { :user_id => user.id, :staff => true }
-      can :manage, Page, :parent => { :user_con_profiles => { :user_id => user.id, :staff => true } }
+      con_staff_scope = Con.joins(:user_con_profiles).where(user_con_profiles: {user_id: user.id, staff: true})
+      
+      can :manage, Con, con_staff_scope.to_sql do |con|
+        user.profile_for(con).staff?
+      end
+      
+      can :manage, Page, Page.where(parent_type: "Con", parent_id: con_staff_scope).to_sql do |page|
+        page.parent.is_a?(Con) && user.profile_for(page.parent).staff?
+      end
     end
   end
 end

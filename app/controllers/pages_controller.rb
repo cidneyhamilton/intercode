@@ -1,5 +1,6 @@
 class PagesController < BaseControllers::VirtualHost
   include Cadmus::PagesController
+  
   authorize_resource :page, :except => [:root]
   before_filter :redirect_if_root_page, :only => [:show]
   
@@ -13,6 +14,10 @@ class PagesController < BaseControllers::VirtualHost
   end
 
   protected
+  def page_params
+    params.permit(page: [:name, :slug, :content])
+  end
+  
   def page_class
     Page
   end

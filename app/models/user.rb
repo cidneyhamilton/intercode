@@ -11,4 +11,10 @@ class User < ActiveRecord::Base
   validates :last_name, presence: true
   
   liquid_methods :email, :first_name, :last_name, :nickname
+  
+  has_many :user_con_profiles
+  
+  def profile_for(con)
+    user_con_profiles.where(con: con).first
+  end
 end

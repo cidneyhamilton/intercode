@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 #ruby '1.9.2'
-gem 'rails', '4.0.0.beta1'
+gem 'rails', '4.0.0'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -37,11 +37,11 @@ end
 gem 'jquery-rails'
 
 # Devise for authentication, cancan for authorization
-gem 'devise', github: 'plataformatec/devise', branch: 'rails4'
-gem 'cancan'
+gem 'devise'
+gem 'cancan', '>= 1.6.10'
 
 # Lightweight open-source CMS (written by Nat for Gively Inc.)
-gem 'cadmus', path: '/Users/nbudin/code/cadmus'
+gem 'cadmus', '>= 0.4.7'
 
 # File uploading
 gem 'carrierwave'
