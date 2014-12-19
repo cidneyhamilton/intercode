@@ -37,8 +37,6 @@ gem 'carrierwave'
 
 #Enviromental Variable Configuration
 gem 'figaro'
-
-gem 'datetimepicker-rails', :require => 'datetimepicker-rails', :git => 'git://github.com/zpaulovics/datetimepicker-rails.git'
 gem 'validates_timeliness'
 
 #gem 'newrelic_rpm'
@@ -47,7 +45,7 @@ gem 'bootstrap-sass'
 gem 'sass-rails', '~> 4.0.0'
 gem 'coffee-rails'
 gem 'jquery-datatables-rails', github: 'rweng/jquery-datatables-rails'
-
+gem 'will_paginate'
 
 # Fixture replacement for test suite
 group :development, :test do
